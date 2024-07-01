@@ -1,0 +1,6 @@
+-- Q1: Who is the senior most employee based on job title?
+-- It is used to find out the senior most employee from the company
+
+select * from employee
+order by levels desc
+limit 1;

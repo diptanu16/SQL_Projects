@@ -1,0 +1,18 @@
+-- Find how much amount spent by each customer on artists?
+--Write a query to return customer name, artist name and total spent
+SELECT
+    c.customer_name,
+    a.artist_name,
+    SUM(p.amount) AS total_spent
+FROM
+    purchases p
+JOIN
+    customers c ON p.customer_id = c.customer_id
+JOIN
+    artists a ON p.artist_id = a.artist_id
+GROUP BY
+    c.customer_name,
+    a.artist_name
+ORDER BY
+    c.customer_name,
+    a.artist_name;

@@ -1,0 +1,7 @@
+-- Who is the best customer? The customer who has spent the most money will be declared the best customer. 
+-- Write a query that returns the person who has spent the most money
+Select cus.customer_id, cus.first_name, cus.last_name, SUM(inv.total) as total
+from customer as cus
+JOIN invoice as inv ON cus.customer_id = inv.customer_id
+GROUP BY cus.customer_id
+order by total desc
